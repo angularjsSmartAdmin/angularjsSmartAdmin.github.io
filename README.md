@@ -19,6 +19,6 @@ This project can also help you use jquery plugins in easiest way along with angu
 
 <h1>Example</h1>
 
-You can view the updates visually from this link : <a href="https://angularjsSmartAdmin.github.io">angularSmartAdmin</a>
+You can view the updates visually from this link : <a href="https://angularjsSmartAdmin.github.io" target="_blank">angularSmartAdmin</a>
 
 So, .......
