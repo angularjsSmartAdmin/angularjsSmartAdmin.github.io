@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+            <div class="well">
+                <form name="forgotpasswordform" id="forgotpasswordform" smart-validate-form novalidate ng-submit="ctrl.forgotpasswordsubmit();">
+                    <fieldset>
+                        <legend>Forgot Password</legend>
+                        <div class="form-group label-floating">
+                            <label class="control-label" for="email">your email</label>
+                            <input class="form-control" name="email" id="email" ng-model="ctrl.forgotpassworddata.email" type="text" required="" />
+                            <p class="help-block">Enter valid email!</p>
+                        </div>
+                        <div class="form-group">
+                            <div class="text-right">
+                                <a href="#/signin" class="btn btn-raised btn-default">Cancel</a>
+                                <button type="submit" id="forgotpasswordsubmit" class="btn btn-raised btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

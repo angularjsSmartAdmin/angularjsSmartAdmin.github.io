@@ -1,0 +1,72 @@
+/* =============================== navbar css =============================== */
+
+.navbar {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
+}
+
+.dropdown-menu .divider {
+    margin: 0;
+}
+
+.navbar.navbar-inverse .dropdown-menu li>a:focus, .navbar.navbar-inverse .dropdown-menu li>a:hover {
+    color: black;
+}
+
+/* =============================== common css =============================== */
+
+.page {
+    margin-top: 100px;
+}
+
+.fit-image {
+    width: 100%;
+}
+
+p {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-top: 15px;
+}
+
+.alert {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
+}
+
+button.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.userLabel {
+    color: #7d7d7d;
+}
+
+.masonry {
+    margin: 1.5em 0;
+    padding: 0;
+    column-gap: 1.5em;
+}
+
+.masonry .item {
+    width: 100%;
+    display: inline-block;
+    background: #ddd;
+    margin: 0 0 1.5em;
+}
+
+@media only screen and (min-width: 700px){
+    .masonry {
+        column-count: 2;
+    }
+}
+@media only screen and (min-width: 900px){
+    .masonry {
+        column-count: 3;
+    }
+}
+@media only screen and (min-width: 1100px){
+    .masonry {
+        column-count: 4;
+    }
+}

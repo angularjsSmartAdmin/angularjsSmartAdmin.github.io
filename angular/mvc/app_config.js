@@ -1,0 +1,1 @@
+var commonModule = angular.module("commonModule", ["ngRoute", "ngAnimate", "directives"]).constant();

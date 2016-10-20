@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angularSmartAdminApp" ng-controller="angularSmartAdminController">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Angular Smart Admin</title>
+        <link type="image/x-icon" href="resources/favicon/favicon.ico" rel="shortcut icon" />
+        <link type="text/css" href="bower_components/jquery-ui/themes/base/jquery-ui.min.css" rel="stylesheet" />
+        <link type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link type="text/css" href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css" rel="stylesheet" />
+        <link type="text/css" href="bower_components/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet" />
+        <link type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link type="text/css" href="bower_components/animate.css/animate.min.css" rel="stylesheet" />
+        <link type="text/css" href="resources/css/angular-animate.css" rel="stylesheet" />
+        <link type="text/css" href="resources/css/style.css" rel="stylesheet" />
+        <link type="text/css" href="resources/css/responsive.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#/">Angular Smart Admin</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#/signin"><i class="fa fa-user"></i></a></li>
+                        <li><a href="#/signup"><i class="fa fa-sign-in"></i></a></li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/installationguide">Installation Guide</a></li>
+                                <li><a href="#/documentation">Documentation</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#/aboutme">About Me</a></li>
+                                <li><a href="#/contactme">Contact Me</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#/blogs">My Blog's</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="page" init-each ng-view></div>
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
+        <script type="text/javascript" src="bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+        <script type="text/javascript" src="resources/js/script.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+        <script type="text/javascript" src="angular/mvc/app_config.js"></script>
+        <script type="text/javascript" src="angular/mvc/home/angularSmartAdmin_module.js"></script>
+        <script type="text/javascript" src="angular/mvc/home/angularSmartAdminConfig.js"></script>
+        <script type="text/javascript" src="angular/mvc/home/angularSmartAdmin_controller.js"></script>
+        <script type="text/javascript" src="angular/directives/directives.js"></script>
+        <script type="text/javascript" src="angular/mvc/home/angularSmartAdmin_factory.js"></script>
+    </body>
+</html>

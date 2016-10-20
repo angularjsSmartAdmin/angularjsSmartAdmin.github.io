@@ -1,0 +1,26 @@
+{
+  "name": "angular_smart_admin",
+  "version": "1.0.0",
+  "description": "This project is for learning angularjs and git repository ()\u001b[Dusage) thoroughly.",
+  "scripts": {
+    "test": "exit 1",
+    "start": "npm run dev",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudhirwagh04/angularSmartAdmin.git"
+  },
+  "keywords": [
+    "angular_smart_admin",
+    "angularsmartadmin",
+    "angularSmartAdmin"
+  ],
+  "author": "sudhirwagh04 <sudhirwagh04@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sudhirwagh04/angularSmartAdmin/issues"
+  },
+  "homepage": "https://github.com/sudhirwagh04/angularSmartAdmin#readme",
+  "dependencies": {}
+}
