@@ -6,33 +6,63 @@ angular.module('directives', [])
                     $(function () {
                         $.material.init();
                     });
-                    $scope.alertMessages = function (errorCode) {
+                    $(".datepicker").datepicker();
+                    $scope.alertMessages = function (errorCode, message) {
+                        // 0 == warning
+                        // 1 == danger
+                        // 2 == success
+                        // 3 == info
                         switch (errorCode) {
                             case '0' :
                                 $.notify({
-                                    message: 'Password is not correct!'
+                                    message: message
                                 }, {
-                                    type: 'danger',
+                                    type: 'warning',
                                     delay: 3000,
-                                    allow_dismiss: false
+                                    allow_dismiss: false,
+                                    animate: {
+                                        enter: 'animated fadeInRight',
+                                        exit: 'animated fadeOutRight'
+                                    }
                                 });
                                 break;
                             case '1' :
                                 $.notify({
-                                    message: 'This username or email is not linked with any account!'
+                                    message: message
                                 }, {
                                     type: 'danger',
                                     delay: 3000,
-                                    allow_dismiss: false
+                                    allow_dismiss: false,
+                                    animate: {
+                                        enter: 'animated bounceIn',
+                                        exit: 'animated bounceOut'
+                                    }
                                 });
                                 break;
                             case '2' :
                                 $.notify({
-                                    message: 'This email is not linked with any account!'
+                                    message: message
                                 }, {
-                                    type: 'danger',
+                                    type: 'success',
                                     delay: 3000,
-                                    allow_dismiss: false
+                                    allow_dismiss: false,
+                                    animate: {
+                                        enter: 'animated fadeInRight',
+                                        exit: 'animated fadeOutRight'
+                                    }
+                                });
+                                break;
+                            case '2' :
+                                $.notify({
+                                    message: message
+                                }, {
+                                    type: 'info',
+                                    delay: 3000,
+                                    allow_dismiss: false,
+                                    animate: {
+                                        enter: 'animated fadeInRight',
+                                        exit: 'animated fadeOutRight'
+                                    }
                                 });
                                 break;
                             default:
@@ -40,7 +70,11 @@ angular.module('directives', [])
                                     message: 'Exception occurred!'
                                 }, {
                                     type: 'info',
-                                    delay: 3000
+                                    delay: 3000,
+                                    animate: {
+                                        enter: 'animated fadeInRight',
+                                        exit: 'animated fadeOutRight'
+                                    }
                                 });
                                 break;
                         }

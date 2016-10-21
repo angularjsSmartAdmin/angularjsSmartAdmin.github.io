@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-            <div class="well">
-                <form name="signupform" id="signupform" smart-validate-form novalidate ng-submit="">
+            <form name="signupform" id="signupform" smart-validate-form novalidate ng-submit="ctrl.signupsubmit();">
+                <div class="well">
                     <fieldset>
                         <legend>Sign Up</legend>
                         <div class="row">
@@ -10,14 +10,119 @@
                                 <div class="form-group label-floating">
                                     <label class="control-label" for="firstname">first name</label>
                                     <input class="form-control" name="firstname" id="firstname" ng-model="ctrl.signupdata.firstname" type="text" required="" />
-                                    <p class="help-block">Enter first name</p>
+                                    <p class="help-block">Enter first name!</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group label-floating">
                                     <label class="control-label" for="lastname">last name</label>
-                                    <input class="form-control" name="lastname" id="lastname" type="text" required="" />
-                                    <p class="help-block">Enter last name</p>
+                                    <input class="form-control" name="lastname" id="lastname" ng-model="ctrl.signupdata.lastname" type="text" required="" />
+                                    <p class="help-block">Enter last name!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label" for="email">email</label>
+                                    <input class="form-control" name="email" data-pattern="[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$" id="email" ng-model="ctrl.signupdata.email" type="text" required="" />
+                                    <p class="help-block">Enter valid email!<br />eg : "example@xyz.com"</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label" for="contactno">contact no.</label>
+                                    <input class="form-control" name="contactno" data-pattern="^\d+$" id="contactno" ng-model="ctrl.signupdata.contactno" type="text" required="" />
+                                    <p class="help-block">Enter valid contact no.!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <!--<label class="control-label" for="country">country</label>-->
+                                    <select class="form-control" name="country" id="country" ng-model="ctrl.signupdata.country" required="" ng-options="x.country as x.country for x in ctrl.userlist">
+                                        <option value="">Select</option>
+                                    </select>
+                                    <!--<input class="form-control" name="country" id="country" ng-model="ctrl.signupdata.country" type="text" required="" />-->
+                                    <p class="help-block">Select country!</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <!--<label class="control-label" for="state">state</label>-->
+                                    <select class="form-control" name="state" id="state" ng-model="ctrl.signupdata.state" required="" ng-options="x.state as x.state for x in ctrl.userlist">
+                                        <option value="">Select</option>
+                                    </select>
+                                    <!--<input class="form-control" name="state" id="state" ng-model="ctrl.signupdata.state" type="text" required="" />-->
+                                    <p class="help-block">Select state!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <!--<label class="control-label" for="city">city</label>-->
+                                    <select class="form-control" name="city" id="city" ng-model="ctrl.signupdata.city" required="" ng-options="x.city as x.city for x in ctrl.userlist">
+                                        <option value="">Select</option>
+                                    </select>
+                                    <!--<input class="form-control" name="city" id="city" ng-model="ctrl.signupdata.city" type="text" required="" />-->
+                                    <p class="help-block">Select city!</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label" for="address">address</label>
+                                    <textarea class="form-control" name="address" id="address" ng-model="ctrl.signupdata.address" required=""></textarea>
+                                    <p class="help-block">Enter address!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label" for="postalcode">postal code</label>
+                                    <input class="form-control" name="postalcode" id="postalcode" ng-model="ctrl.signupdata.postalcode" type="text" required="" />
+                                    <p class="help-block">Enter postal code!</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label" for="post">post</label>
+                                    <input class="form-control" name="post" id="post" ng-model="ctrl.signupdata.post" type="text" required="" />
+                                    <p class="help-block">Enter post!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label" for="sex">sex</label>
+                                    <input class="form-control" name="sex" id="sex" ng-model="ctrl.signupdata.sex" type="text" required="" />
+                                    <p class="help-block">Select sex!</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label" for="birthdate">birth date</label>
+                                    <input class="form-control datepicker" name="birthdate" id="birthdate" ng-model="ctrl.signupdata.birthdate" type="text" required="" />
+                                    <p class="help-block">Enter address!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label" for="username">username</label>
+                                    <input class="form-control" name="username" id="username" ng-model="ctrl.signupdata.username" type="text" required="" />
+                                    <p class="help-block">Enter username!</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label" for="password">password</label>
+                                    <input class="form-control" name="password" id="password" ng-model="ctrl.signupdata.password" type="password" required="" />
+                                    <p class="help-block">Enter address!</p>
                                 </div>
                             </div>
                         </div>
@@ -33,8 +138,8 @@
                             </div>
                         </div>
                     </fieldset>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

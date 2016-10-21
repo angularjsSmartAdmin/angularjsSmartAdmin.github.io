@@ -7,7 +7,13 @@ myApp.controller("angularSmartAdminController", ["$scope", "angularSmartAdminFac
             angularSmartAdminFactory.getData()
                     .then(
                             function (data) {
-                                self.userlist = data;
+                                for (var i = 0; i < data.length; i++) {
+                                    data[i].password = atob(data[i].password);
+                                    var chkId = i + 1;
+                                    if (chkId === data.length) {
+                                        self.userlist = data;
+                                    }
+                                }
                             },
                             function (errResponse) {
                                 alert(errResponse.data);
@@ -34,7 +40,7 @@ myApp.controller("angularSmartAdminController", ["$scope", "angularSmartAdminFac
                                         for (var i = 0; i < data.length; i++) {
                                             if (self.signindata.usernameoremail === data[i].username || self.signindata.usernameoremail === data[i].emailid) {
                                                 exists = true;
-                                                if (self.signindata.password === data[i].password) {
+                                                if (self.signindata.password === atob(data[i].password)) {
                                                     $("#signinsubmit").html("<i class='fa fa-spinner fa-spin'></i>&nbsp;&nbsp;signing in");
                                                     setTimeout(function () {
                                                         $("#signinsubmit").html("Submit").removeClass("disabled");
@@ -43,7 +49,7 @@ myApp.controller("angularSmartAdminController", ["$scope", "angularSmartAdminFac
                                                 } else {
                                                     $("#signinsubmit").html("Submit").removeClass("disabled");
                                                     $("#password").focus();
-                                                    $scope.alertMessages("0");
+                                                    $scope.alertMessages("1", "Password is not correct!");
                                                 }
                                                 break;
                                             }
@@ -52,7 +58,7 @@ myApp.controller("angularSmartAdminController", ["$scope", "angularSmartAdminFac
                                                 if (exists === false) {
                                                     $("#signinsubmit").html("Submit").removeClass("disabled");
                                                     $("#usernameoremail").focus();
-                                                    $scope.alertMessages("1");
+                                                    $scope.alertMessages("1", "This username or email is not linked with any account!");
                                                 }
                                             }
                                         }
@@ -94,7 +100,7 @@ myApp.controller("angularSmartAdminController", ["$scope", "angularSmartAdminFac
                                                 if (exists === false) {
                                                     $("#forgotpasswordsubmit").html("Submit").removeClass("disabled");
                                                     $("#email").focus();
-                                                    $scope.alertMessages("2");
+                                                    $scope.alertMessages("1", "This email is not linked with any account!");
                                                 }
                                             }
                                         }
@@ -104,6 +110,30 @@ myApp.controller("angularSmartAdminController", ["$scope", "angularSmartAdminFac
                                     }
                             );
                 }, 2000);
+            }
+        };
+
+        //sign up form
+        self.signupdata = {
+            "firstname": "",
+            "lastname": "",
+            "email": "",
+            "contactno": "",
+            "country": "",
+            "state": "",
+            "city": "",
+            "address": "",
+            "postalcode": "",
+            "post": "",
+            "sex": "",
+            "birthdate": "",
+            "username": "",
+            "password": ""
+        };
+        self.signupsubmit = function () {
+            var isvalidate = $("#signupform").valid();
+            if (isvalidate) {
+                console.log(self.signupdata);
             }
         };
     }]);
