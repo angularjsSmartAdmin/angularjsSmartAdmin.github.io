@@ -22,6 +22,45 @@ myApp.controller("angularSmartAdminController", ["$scope", "angularSmartAdminFac
         };
         self.onloaddata();
 
+        //location data
+        self.location = {
+            "countries": [],
+            "states": [],
+            "cities": [],
+            "countryState": [],
+            "stateCity": []
+        };
+        self.locationdata = function () {
+            angularSmartAdminFactory.countries()
+                    .then(
+                            function (data) {
+                                self.location.countries = data;
+                            },
+                            function (errResponse) {
+                                alert(errResponse.data);
+                            }
+                    );
+            angularSmartAdminFactory.states()
+                    .then(
+                            function (data) {
+                                self.location.states = data;
+                            },
+                            function (errResponse) {
+                                alert(errResponse.data);
+                            }
+                    );
+            angularSmartAdminFactory.cities()
+                    .then(
+                            function (data) {
+                                self.location.cities = data;
+                            },
+                            function (errResponse) {
+                                alert(errResponse.data);
+                            }
+                    );
+        };
+        self.locationdata();
+
         //sign in form
         self.signindata = {
             "usernameoremail": "",

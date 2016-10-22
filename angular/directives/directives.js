@@ -7,6 +7,32 @@ angular.module('directives', [])
                         $.material.init();
                     });
                     $(".datepicker").datepicker();
+                    $(".search-select input[type=text]").focus(function () {
+                        $(this).parent("div").children("select").fadeIn(300);
+                    });
+                    $(".search-select input[type=text]").blur(function () {
+                        $(this).parent("div").children("select").fadeOut(300);
+                    });
+                    $(".search-select input[type=text]").keyup(function () {
+                        $(this).parent("div").children("select").children("option").show();
+                        var txt = $(this).val();
+                        if (txt !== "") {
+                            for (var i = 0; i < $(this).parent("div").children("select").children("option").length; i++) {
+                                var option = $(this).parent("div").children("select").children("option")[i];
+                                var optionTxt = $(option).text().toLowerCase();
+                                if (optionTxt.indexOf(txt.toLowerCase()) > -1)
+                                {
+                                } else {
+                                    $(option).hide();
+                                }
+                            }
+                        }
+                    });
+                    $(".search-select select").change(function () {
+                        var val = $(this).find('option:selected').text();
+                        $(this).parent("div").removeClass("has-error").removeClass("is-empty").children("input[type=text]").val(val);
+                        $(this).children("option").show();
+                    });
                     $scope.alertMessages = function (errorCode, message) {
                         // 0 == warning
                         // 1 == danger
