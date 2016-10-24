@@ -61,6 +61,24 @@ myApp.controller("angularSmartAdminController", ["$scope", "angularSmartAdminFac
         };
         self.locationdata();
 
+        self.countryChange = function (countryId) {
+            self.location.countryState = [];
+            for (var i = 0; i < self.location.states.length; i++) {
+                if (self.location.states[i].countryId === countryId) {
+                    self.location.countryState.push(self.location.states[i]);
+                }
+            }
+        };
+
+        self.stateChange = function (stateId) {
+            self.location.stateCity = [];
+            for (var i = 0; i < self.location.cities.length; i++) {
+                if (self.location.cities[i].stateId === stateId) {
+                    self.location.stateCity.push(self.location.cities[i]);
+                }
+            }
+        };
+
         //sign in form
         self.signindata = {
             "usernameoremail": "",

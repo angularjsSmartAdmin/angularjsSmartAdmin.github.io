@@ -43,7 +43,7 @@
                                     <label class="control-label" for="country">country</label>
                                     <input class="form-control" name="country" id="country" type="text" required="" />
                                     <i class="fa fa-angle-down"></i>
-                                    <select size="6" ng-model="ctrl.signupdata.country" ng-options="x.countryId as x.countryName for x in ctrl.location.countries">
+                                    <select size="6" ng-model="ctrl.signupdata.country" ng-options="x.countryId as x.countryName for x in ctrl.location.countries" ng-change="ctrl.countryChange(ctrl.signupdata.country);">
                                         <option value="" disabled="disabled">Select</option>
                                     </select>
                                 </div>
@@ -53,7 +53,7 @@
                                     <label class="control-label" for="state">state</label>
                                     <input class="form-control" name="state" id="state" type="text" required="" />
                                     <i class="fa fa-angle-down"></i>
-                                    <select size="6" ng-model="ctrl.signupdata.state" ng-options="x.stateId as x.stateName for x in ctrl.location.countryState">
+                                    <select size="6" ng-model="ctrl.signupdata.state" ng-options="x.stateId as x.stateName for x in ctrl.location.countryState" ng-change="ctrl.stateChange(ctrl.signupdata.state);">
                                         <option value="" disabled="disabled">Select</option>
                                     </select>
                                 </div>
@@ -61,13 +61,13 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group label-floating">
-                                    <!--<label class="control-label" for="city">city</label>-->
-                                    <select class="form-control" name="city" id="city" ng-model="ctrl.signupdata.city" required="" ng-options="x.city as x.city for x in ctrl.userlist">
-                                        <option value="">Select</option>
+                                <div class="form-group label-floating search-select">
+                                    <label class="control-label" for="city">city</label>
+                                    <input class="form-control" name="city" id="city" type="text" required="" />
+                                    <i class="fa fa-angle-down"></i>
+                                    <select size="6" ng-model="ctrl.signupdata.city" ng-options="x.cityId as x.cityName for x in ctrl.location.stateCity">
+                                        <option value="" disabled="disabled">Select</option>
                                     </select>
-                                    <!--<input class="form-control" name="city" id="city" ng-model="ctrl.signupdata.city" type="text" required="" />-->
-                                    <p class="help-block">Select city!</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
