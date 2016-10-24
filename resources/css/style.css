@@ -58,6 +58,7 @@
 /* =============================== common css =============================== */
 
 .page {
+    color: #7d7d7d;
     margin-top: 100px;
 }
 
@@ -96,6 +97,55 @@ button.disabled {
     display: inline-block;
     background: #ddd;
     margin: 0 0 1.5em;
+}
+
+.working-animation {
+    position: relative;
+    display: inline-block;
+}
+
+.working-1 {
+    animation: working-1 4s infinite linear;
+}
+
+.working-2 {
+    position: absolute;
+    top: 0;
+    animation: working-2 4s infinite linear;
+    right: -22px;
+}
+
+.page-under-construction {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    margin-left: 38px;
+    font-size: 30px;
+}
+
+@-moz-keyframes working-1 {
+    from { -moz-transform: rotate(360deg); }
+    to { -moz-transform: rotate(0deg); }
+}
+@-webkit-keyframes working-1 {
+    from { -webkit-transform: rotate(360deg); }
+    to { -webkit-transform: rotate(0deg); }
+}
+@keyframes rotate {
+    from {transform:working-1(360deg);}
+    to {transform:rotate(0deg);}
+}
+@-moz-keyframes working-2 {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes working-2 {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes working-2 {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
 }
 
 @media only screen and (min-width: 700px){
