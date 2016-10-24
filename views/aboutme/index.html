@@ -8,12 +8,7 @@
                 </div>
                 <p class="page-under-construction">Page Under Construction</p>
                 <hr />
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 mrgbtm_20 text-center">
-                        <div class="clock" style="margin:2em;"></div>
-                        <div class="message"></div>
-                    </div>
-                </div>
+                <div class="clock" style="margin:2em;"></div>
             </div>
         </div>
     </div>
@@ -21,9 +16,9 @@
 <script type="text/javascript">
     $(document).ready(function () {
         var clock;
-        var date = new Date(Date.UTC(2016, 12, 29, 12, 0, 0));
+        var date = new Date(Date.UTC(2016, 11, 29));
         var now = new Date();
-        var diff = date.getTime() / 1000 - now.getTime() / 1000;
+        var diff = (date.getTime()/1000) - (now.getTime()/1000);
         clock = $('.clock').FlipClock(diff, {
             clockFace: 'DailyCounter',
             countdown: true
