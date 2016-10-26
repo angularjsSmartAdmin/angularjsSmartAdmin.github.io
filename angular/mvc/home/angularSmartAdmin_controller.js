@@ -79,6 +79,11 @@ myApp.controller("angularSmartAdminController", ["$scope", "angularSmartAdminFac
             }
         };
 
+        //password paste
+        self.passwordPaste = function (e) {
+            e.target.value = "safasfasfasfsafasfasfasfasfasfdsfsdfsdfsdfsdfsdfdsfs";
+        };
+
         //sign in form
         self.signindata = {
             "usernameoremail": "",
