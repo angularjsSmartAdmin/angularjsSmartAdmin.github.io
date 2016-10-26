@@ -121,8 +121,8 @@
                             <div class="col-md-6">
                                 <div class="form-group label-floating">
                                     <label class="control-label" for="password">password</label>
-                                    <input class="form-control" name="password" id="password" ng-model="ctrl.signupdata.password" type="password" required="" />
-                                    <p class="help-block">Enter address!</p>
+                                    <input class="form-control" name="password" id="password" ng-paste="ctrl.passwordPaste($event);" ng-model="ctrl.signupdata.password" type="password" required="" />
+                                    <p class="help-block">Enter password!</p>
                                 </div>
                             </div>
                         </div>
