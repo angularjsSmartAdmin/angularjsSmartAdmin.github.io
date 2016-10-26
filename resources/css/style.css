@@ -86,6 +86,11 @@ button.disabled {
     color: #7d7d7d;
 }
 
+.userLabel img {
+    width: 70px;
+    border-radius: 50%;
+}
+
 .masonry {
     margin: 1.5em 0;
     padding: 0;

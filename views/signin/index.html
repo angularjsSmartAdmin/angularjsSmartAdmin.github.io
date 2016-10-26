@@ -58,10 +58,10 @@
         <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="x in ctrl.userlist">
             <div class="well">
                 <label class="userLabel">
+                    <img ng-src="{{x.profilepic}}" />&nbsp;&nbsp;
                     <b>{{x.id}}) &nbsp;{{x.firstname + " " + x.lastname}}</b>
                 </label>
-                <br />
-                <br />
+                <hr />
                 <label class="userLabel">
                     <b>Username : </b>&nbsp;{{x.username}}
                 </label>
