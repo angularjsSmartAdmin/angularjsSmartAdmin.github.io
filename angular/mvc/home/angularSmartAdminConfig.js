@@ -1,7 +1,8 @@
 myApp.config(["$routeProvider", function ($routeProvider) {
         $routeProvider
                 .when("/", {
-                    templateUrl: "views/home/",
+                    //templateUrl: "views/home/",
+                    templateUrl: "views/signin/",
                     controller: "angularSmartAdminController as ctrl"
                 })
                 .when("/signin", {
