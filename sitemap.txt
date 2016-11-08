@@ -1,0 +1,4 @@
+https://angularjssmartadmin.github.io/#/
+https://angularjssmartadmin.github.io/#/signin
+https://angularjssmartadmin.github.io/#/signup
+https://angularjssmartadmin.github.io/#/blogs
