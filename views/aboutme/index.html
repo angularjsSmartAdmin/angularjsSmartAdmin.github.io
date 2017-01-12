@@ -14,11 +14,11 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(document).ready(function () {
+    $(document).ready(function() {
         var clock;
-        var date = new Date(Date.UTC(2016, 11, 29));
+        var date = new Date(Date.UTC(2017, 1, 7));
         var now = new Date();
-        var diff = (date.getTime()/1000) - (now.getTime()/1000);
+        var diff = (date.getTime() / 1000) - (now.getTime() / 1000);
         clock = $('.clock').FlipClock(diff, {
             clockFace: 'DailyCounter',
             countdown: true
